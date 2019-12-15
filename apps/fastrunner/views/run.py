@@ -28,13 +28,13 @@ config_err = {
 
 @api_view(['POST'])
 @request_log(level='INFO')
-def run_api(request):
+def run_test(request):
     """ run api by body
     """
     import json
     agrs = json.loads(request.body.decode("utf-8"))
     print("dsaasfadsfsad")
-    print(args)
+    print(agrs)
     return Response({'traceback': "cc"}, status=400)
 
 
