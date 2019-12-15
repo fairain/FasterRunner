@@ -31,6 +31,18 @@ config_err = {
 def run_api(request):
     """ run api by body
     """
+    import json
+    agrs = json.loads(request.body.decode("utf-8"))
+    print("dsaasfadsfsad")
+    print(args)
+    return Response({'traceback': "cc"}, status=400)
+
+
+@api_view(['POST'])
+@request_log(level='INFO')
+def run_api(request):
+    """ run api by body
+    """
     name = request.data.pop('config')
     host = request.data.pop("host")
     api = Format(request.data)

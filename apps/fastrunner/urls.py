@@ -103,6 +103,7 @@ urlpatterns = [
     path('run_api_pk/<int:pk>/', run.run_api_pk),
     path('run_api_tree/', run.run_api_tree),
     path('run_api/', run.run_api),
+    path('run_test/', run.run_test),
 
     # run testcase
     path('run_testsuite_pk/<int:pk>/', run.run_testsuite_pk),
