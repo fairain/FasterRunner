@@ -271,6 +271,7 @@ def debug_api(api, project, name=None, config=None, save=False, test_data=None, 
     os.chdir(os.path.dirname(debugtalk_path))
     try:
         testcase_list = [parse_tests(api, debugtalk_content, project, name=name, config=config)]
+        print(testcase_list)
 
         fail_fast = False
         if config and 'failFast' in config.keys():
@@ -282,6 +283,8 @@ def debug_api(api, project, name=None, config=None, save=False, test_data=None, 
         if test_data is not None:
             os.environ["excelName"] = test_data[0]
             os.environ["excelsheet"] = test_data[1]
+        print("------------------------------------")
+        print(kwargs)
         runner = HttpRunner(**kwargs)
         runner.run(testcase_list)
 
